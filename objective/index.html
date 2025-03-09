@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>1st Workshop on Robot Meets GNSS</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- uikit -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.19.2/dist/css/uikit.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.19.2/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.19.2/dist/js/uikit-icons.min.js"></script>
+
+    <!-- time zone localization -->
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.7/dayjs.min.js" integrity="sha256-EfJOqCcshFS/2TxhArURu3Wn8b/XDA4fbPWKSwZ+1B8=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.7/plugin/utc.js" integrity="sha256-qDfIIxqpRhYWa543p6AHZ323xT3B8O6iLZFUAWtEQJw=" crossorigin="anonymous"></script>
+
+    
+      <link rel="alternate" type="application/atom+xml" title="CodeRefinery" href="https://hz658832.github.io/RobotMeetGNSS/atom.xml" />
+    
+
+        
+      <title>CodeRefinery</title>
+      <meta name="twitter:title" content="1st Workshop on Robot Meets GNSS" />
+      <meta property="og:title" content="1st Workshop on Robot Meets GNSS" />
+    
+
+    
+      <meta name="description" content="Exploring Synergies and Challenges of Global Navigation Satellite Systems in Robotics." />
+      <meta name="twitter:description" content="Exploring Synergies and Challenges of Global Navigation Satellite Systems in Robotics." />
+      <meta property="og:description" content="Exploring Synergies and Challenges of Global Navigation Satellite Systems in Robotics." />
+    
+
+    
+      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:image" content="https://raw.githubusercontent.com/coderefinery/coderefinery-artwork/main/socialshare/socialshare-workshop.png" />
+      <meta property="og:image" content="https://raw.githubusercontent.com/coderefinery/coderefinery-artwork/main/socialshare/socialshare-workshop.png" />
+    
+
+
+    
+
+    <link href="https://hz658832.github.io/RobotMeetGNSS/style.css" rel="stylesheet">
+
+    
+    <script defer data-domain="coderefinery.github.io" src="https://plausible.cs.aalto.fi/js/script.js"></script>
+    
+
+
+  </head>
+
+  <body>
+    <div class="uk-container uk-margin-large-bottom">
+
+      <nav class="uk-navbar-container uk-navbar-transparent" uk-navbar>
+  <div class="uk-navbar-right">
+    <ul class="uk-navbar-nav uk-visible@s">
+      
+      
+  <li>
+
+    
+    
+      
+        
+      
+    
+
+    
+
+    <a href="https:&#x2F;&#x2F;hz658832.github.io&#x2F;RobotMeetGNSS">
+      Home
+      
+    </a>
+
+    
+
+  </li>
+
+  <li>
+
+    
+    
+      
+        
+      
+    
+
+    
+
+    <a href="https:&#x2F;&#x2F;hz658832.github.io&#x2F;RobotMeetGNSS&#x2F;objective">
+      Motivation and Goal
+      
+    </a>
+
+    
+
+  </li>
+
+  <li>
+
+    
+    
+      
+        
+      
+    
+
+    
+
+    <a href="https:&#x2F;&#x2F;hz658832.github.io&#x2F;RobotMeetGNSS&#x2F;communication">
+      Contact
+      
+    </a>
+
+    
+
+  </li>
+
+
+    </ul>
+    <a href="#" class="uk-navbar-toggle uk-hidden@s" uk-navbar-toggle-icon uk-toggle="target: #sidenav"></a>
+  </div>
+</nav>
+
+<div id="sidenav" uk-offcanvas="flip: true" class="uk-offcanvas">
+  <div class="uk-offcanvas-bar">
+    <ul class="uk-nav">
+      
+      
+  <li>
+
+    
+    
+      
+        
+      
+    
+
+    
+
+    <a href="https:&#x2F;&#x2F;hz658832.github.io&#x2F;RobotMeetGNSS">
+      Home
+      
+    </a>
+
+    
+
+  </li>
+
+  <li>
+
+    
+    
+      
+        
+      
+    
+
+    
+
+    <a href="https:&#x2F;&#x2F;hz658832.github.io&#x2F;RobotMeetGNSS&#x2F;objective">
+      Motivation and Goal
+      
+    </a>
+
+    
+
+  </li>
+
+  <li>
+
+    
+    
+      
+        
+      
+    
+
+    
+
+    <a href="https:&#x2F;&#x2F;hz658832.github.io&#x2F;RobotMeetGNSS&#x2F;communication">
+      Contact
+      
+    </a>
+
+    
+
+  </li>
+
+
+    </ul>
+  </div>
+</div>
+
+
+
+      <div class="markdown">
+        
+  
+    <h2 id="motivation">Motivation</h2>
+<p>Robot navigation in outdoor environments typically requires globally consistent state estimation for effective planning and coordination. Traditional Simultaneous Localization and Mapping (SLAM) approaches using local sensors (e.g., LiDARs, cameras) are often inefficient and unreliable due to scarce loop-closure constraints and sensor degradation in large-scale outdoor conditions. In this context, the Global Navigation Satellite System (GNSS) offers an effective, low-cost complementary sensing modality for robotic applications.</p>
+<p>Over the years, GNSS has been widely acknowledged within the robotics community, with numerous studies demonstrating its crucial role in achieving globally consistent state estimation and long-term navigation (see Figure 1). However, significant gaps persist between the GNSS and robotics research communities, as advanced research breakthroughs are often not effectively communicated. This issue becomes particularly evident in robotic applications where GNSS performance degrades due to severe signal interference, such as multipath effects and non-line-of-sight receptions in challenging environments.  Since recent research outcomes in the GNSS community present significant breakthroughs in solving these problems—many of which share similar theoretical backgrounds with robotic problems (e.g., SLAM)—bridging these two domains offers tremendous potential for advancing outdoor robot localization.</p>
+<p>This workshop aims to unite cutting-edge research from both communities, fostering high-level exchanges on robotic applications leveraging GNSS and similar sensing modalities for accurate and reliable state estimation. Given that the GNSS and robotics communities face similar challenges in algorithm development—such as robust error modeling, hyper-parameter tuning, and certifiable solvers—the workshop seeks to create a platform that brings together invited experts, industry representatives, and particularly young researchers to collaborate on these shared issues and accelerate progress in both fields. In addition, we expect to share ideas and insights that enable the transfer of GNSS research know-how to other ranging sensors. </p>
+
+  
+  
+
+      </div>
+
+      <div class="uk-margin-large-top">
+        <hr>
+        <div class="uk-child-width-expand@s" uk-grid>
+
+  <div>
+    <h4>Follow us</h4>
+    <ul class="uk-iconnav">
+      <li>
+        <a href="https://github.com/coderefinery" target="_blank" uk-icon="icon: github">GitHub</a>
+      </li>
+      <li>
+        <a rel="me" href="https://fosstodon.org/@coderefinery" target="_blank" uk-icon="icon: social">Mastodon</a>
+      </li>
+      <li>
+        <a href="https://www.linkedin.com/company/coderefinery-research-software-development/?viewAsMember=true" target="_blank" uk-icon="icon: linkedin">LinkedIn</a>
+      </li>
+    </ul>
+  </div>
+
+  <div>
+    <h4>Contact</h4>
+    <p>
+      <a href="mailto:haoming.zhang@rwth-aachen.de">Haoming Zhang</a><br>
+      <a href="mailto:welson.wen@polyu.edu.hk">Weisong Wen</a>
+    </p>
+  </div>
+
+  <div>
+    <h4>Acknowledgement</h4>
+    <p>
+      Website powered by <a href="https://coderefinery.org/">CODE REFINERY</a>.
+    </p>
+  </div>
+
+</div>
+
+      </div>
+
+    </div>
+  </body>
+
+  <script src="https://cdn.jsdelivr.net/npm/anchor-js/anchor.min.js"></script>
+  <script>
+    anchors.add();
+  </script>
+</html>
