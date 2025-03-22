@@ -1,0 +1,1687 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>1st Workshop on Robot Meets GNSS</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- uikit -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.19.2/dist/css/uikit.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.19.2/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.19.2/dist/js/uikit-icons.min.js"></script>
+
+    <!-- time zone localization -->
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.7/dayjs.min.js" integrity="sha256-EfJOqCcshFS/2TxhArURu3Wn8b/XDA4fbPWKSwZ+1B8=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.7/plugin/utc.js" integrity="sha256-qDfIIxqpRhYWa543p6AHZ323xT3B8O6iLZFUAWtEQJw=" crossorigin="anonymous"></script>
+
+    
+      <link rel="alternate" type="application/atom+xml" title="CodeRefinery" href="https://robotmeetsgnss.com/atom.xml" />
+    
+
+        
+      <title>CodeRefinery</title>
+      <meta name="twitter:title" content="1st Workshop on Robot Meets GNSS" />
+      <meta property="og:title" content="1st Workshop on Robot Meets GNSS" />
+    
+
+    
+      <meta name="description" content="Exploring Synergies and Challenges of Global Navigation Satellite Systems in Robotics." />
+      <meta name="twitter:description" content="Exploring Synergies and Challenges of Global Navigation Satellite Systems in Robotics." />
+      <meta property="og:description" content="Exploring Synergies and Challenges of Global Navigation Satellite Systems in Robotics." />
+    
+
+    
+      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:image" content="https://github.com/hz658832/RobotMeetGNSS/blob/main/content/header_wide.png" />
+      <meta property="og:image" content="https://github.com/hz658832/RobotMeetGNSS/blob/main/content/header_wide.png" />
+    
+
+
+    
+
+    <link href="https://robotmeetsgnss.com/style.css" rel="stylesheet">
+
+    
+    <script defer data-domain="coderefinery.github.io" src="https://plausible.cs.aalto.fi/js/script.js"></script>
+    
+
+
+  </head>
+
+  <body>
+    <div class="uk-container uk-margin-large-bottom">
+
+      <nav class="uk-navbar-container uk-navbar-transparent" uk-navbar>
+  <div class="uk-navbar-right">
+    <ul class="uk-navbar-nav uk-visible@s">
+      
+      
+  <li>
+
+    
+    
+      
+        
+      
+    
+
+    
+
+    <a href="https:&#x2F;&#x2F;robotmeetsgnss.com">
+      Home
+      
+    </a>
+
+    
+
+  </li>
+
+  <li>
+
+    
+    
+      
+        
+      
+    
+
+    
+
+    <a href="https:&#x2F;&#x2F;robotmeetsgnss.com&#x2F;objective">
+      Motivation and Goal
+      
+    </a>
+
+    
+
+  </li>
+
+  <li>
+
+    
+    
+      
+        
+      
+    
+
+    
+
+    <a href="https:&#x2F;&#x2F;robotmeetsgnss.com&#x2F;workshop_content">
+      Workshop Content
+      
+    </a>
+
+    
+
+  </li>
+
+
+    </ul>
+    <a href="#" class="uk-navbar-toggle uk-hidden@s" uk-navbar-toggle-icon uk-toggle="target: #sidenav"></a>
+  </div>
+</nav>
+
+<div id="sidenav" uk-offcanvas="flip: true" class="uk-offcanvas">
+  <div class="uk-offcanvas-bar">
+    <ul class="uk-nav">
+      
+      
+  <li>
+
+    
+    
+      
+        
+      
+    
+
+    
+
+    <a href="https:&#x2F;&#x2F;robotmeetsgnss.com">
+      Home
+      
+    </a>
+
+    
+
+  </li>
+
+  <li>
+
+    
+    
+      
+        
+      
+    
+
+    
+
+    <a href="https:&#x2F;&#x2F;robotmeetsgnss.com&#x2F;objective">
+      Motivation and Goal
+      
+    </a>
+
+    
+
+  </li>
+
+  <li>
+
+    
+    
+      
+        
+      
+    
+
+    
+
+    <a href="https:&#x2F;&#x2F;robotmeetsgnss.com&#x2F;workshop_content">
+      Workshop Content
+      
+    </a>
+
+    
+
+  </li>
+
+
+    </ul>
+  </div>
+</div>
+
+
+
+      <div class="markdown">
+        
+  
+  <div class="uk-height-medium uk-flex  uk-flex-bottom uk-flex-right uk-background-cover uk-light " data-src="https:&#x2F;&#x2F;robotmeetsgnss.com&#x2F;processed_images&#x2F;header_tighter.6d91ac32344092d4.png" uk-img>
+    <div class="uk-width-auto@m">
+      <div class="uk-grid-small uk-child-width-auto uk-margin" uk-grid uk-countdown="date: 2025-10-19T12:45:00+00:00">
+          <div>
+              <div class="uk-countdown-number uk-countdown-days uk-text-xlarge"></div>
+              <div class="uk-countdown-label uk-margin-small uk-text-center uk-visible@s">Days</div>
+          </div>
+          <div class="uk-countdown-separator">:</div>
+          <div>
+              <div class="uk-countdown-number uk-countdown-hours"></div>
+              <div class="uk-countdown-label uk-margin-small uk-text-center uk-visible@s">Hours</div>
+          </div>
+          <div class="uk-countdown-separator">:</div>
+          <div>
+              <div class="uk-countdown-number uk-countdown-minutes"></div>
+              <div class="uk-countdown-label uk-margin-small uk-text-center uk-visible@s">Minutes</div>
+          </div>
+          <div class="uk-countdown-separator">:</div>
+          <div>
+              <div class="uk-countdown-number uk-countdown-seconds"></div>
+              <div class="uk-countdown-label uk-margin-small uk-text-center uk-visible@s">Seconds</div>
+          </div>
+      </div>
+    </div>
+
+  </div>
+  <p></p>
+  <div class="uk-margin-bottom" uk-grid>
+    <div class="uk-width-expand@m">
+      <h1><b>1st Workshop on Robot Meets GNSS</h1>
+      <h3 class="uk-align-right">Exploring Synergies and Challenges of Global Navigation Satellite Systems in Robotics</h3>
+    </div>
+  </div>
+  <div class="uk-card uk-card-secondary uk-card-hover uk-card-body uk-light uk-margin-medium-bottom">
+    <div uk-grid>
+      <div class="uk-width-expand@m">
+        
+<h3 id="news"><b>News</h3>
+<ul>
+<li>March 15, 2025: All speakers confirmed.</li>
+<li>March 9, 2025: Workshop website hosted.</li>
+</ul>
+
+
+      </div>
+      <!--div class="uk-width-expand@m">
+        
+<h3 id="important-links"><b> Important links</h3>
+<ul>
+<li>...</li>
+</ul>
+
+
+      </div-->
+    </div>
+  </div>
+
+
+  <div class="uk-width-1-1@m">
+      <h2><b>Scope</h2>
+<p> This workshop aims to unite the GNSS and robotics communities to enhance state estimation for outdoor robot navigation. While GNSS offers a low-cost complement to traditional SLAM, its performance degrades in challenging environments. Recent GNSS advancements share common ground with robotics challenges like SLAM, presenting opportunities for cross-disciplinary innovation. By bringing together experts, industry leaders, and young researchers, this workshop will foster collaboration on shared issues such as error modeling and solver optimization, accelerating progress in both fields.</p>
+
+
+
+  </div>
+  <hr class="uk-divider-icon">
+  <div class="uk-width-1-1@m">
+    <h2><b>Invited Speakers</h2>
+<p>Speakers are listed in the order of their scheduled presentations.</p>
+
+
+
+
+
+
+
+
+
+
+
+<div class="uk-overflow-auto">
+	<div class="uk-grid uk-child-width-expand@s" uk-grid>
+	    <div class="uk-width-1-3@m">
+			<table class="uk-table uk-table-small uk-table-justify uk-table-striped">
+       	 		<thead>
+	            	<tr>
+	                	<th class="uk-table-shrink"></th>
+	                	<th class="uk-table-shrink"></th>
+	            	</tr>
+	        	</thead>
+	        	<tbody>
+	        		<tr>
+	                	<td><img class="uk-preserve-width uk-border-rounded" src="https:&#x2F;&#x2F;robotmeetsgnss.com&#x2F;processed_images&#x2F;s_prof_lu.c17e509df06a7cb8.png" width="150" height="100" alt=""></td>
+	                	<td class="uk-text-top uk-table-expand">
+	                	    <span class="uk-text-middle">Prof. Dr. Mingquan Lu</span>
+	                	    <br>
+	                	    <span class="uk-text-middle uk-text-light uk-text-small">Tsinghua University,<br>China</span>
+	                	    <br>
+	                	    <span class="uk-text-middle uk-text-light uk-text-small"><a href="http://web.ee.tsinghua.edu.cn/lumingquan/en/index.htm " target="_blank">Website</a></span>
+	                	</td>
+	            	</tr>
+
+	            	<tr>
+	                	<td><img class="uk-preserve-width uk-border-rounded" src="https:&#x2F;&#x2F;robotmeetsgnss.com&#x2F;processed_images&#x2F;s_jiarong.94355e9c2f8c821c.png" width="150" height="100" alt=""></td>
+	                	<td class="uk-text-top uk-table-expand">
+	                	    <span class="uk-text-middle">Dr. Jiarong Lin<br>(Prof. Dr. Fu Zhang)</span>
+	                	    <br>
+	                	    <span class="uk-text-middle uk-text-light uk-text-small">MARS Lab,<br>University of Hong Kong,<br>Hong Kong</span>
+	                	    <br>
+	                	    <span class="uk-text-middle uk-text-light uk-text-small"><a href="https://mars.hku.hk/people.html" target="_blank">Website</a></span>
+	                	</td>
+	            	</tr>
+
+	            	<tr>
+	                	<td><img class="uk-preserve-width uk-border-rounded" src="https:&#x2F;&#x2F;robotmeetsgnss.com&#x2F;processed_images&#x2F;s_tim.00d65b90b3d372be.png" width="150" height="100" alt=""></td>
+	                	<td class="uk-text-top uk-table-expand">
+	                	    <span class="uk-text-middle">Dr.-Ing. Tim Pfeifer</span>
+	                	    <br>
+	                	    <span class="uk-text-middle uk-text-light uk-text-small">Siemens AG,<br>Germany</span>
+	                	    <br>
+	                	    <span class="uk-text-middle uk-text-light uk-text-small"><a href="https://tipf.github.io/" target="_blank">Website</a></span>
+	                	</td>
+	            	</tr>
+	         
+	        	</tbody>
+    		</table>	
+	    </div>
+
+	    <div class="uk-width-1-3@m">
+			<table class="uk-table uk-table-small uk-table-justify uk-table-striped">
+       	 		<thead>
+	            	<tr>
+	                	<th class="uk-table-shrink"></th>
+	                	<th class="uk-table-shrink"></th>
+	            	</tr>
+	        	</thead>
+	        	<tbody>
+	        		<tr>
+	                	<td><img class="uk-preserve-width uk-border-rounded" src="https:&#x2F;&#x2F;robotmeetsgnss.com&#x2F;processed_images&#x2F;s_ling_pei.bce249b96db92763.png" width="150" height="100" alt=""></td>
+	                	<td class="uk-text-top uk-table-expand">
+	                	    <span class="uk-text-middle">Prof. Dr. Ling Pei</span>
+	                	    <br>
+	                	    <span class="uk-text-middle uk-text-light uk-text-small">Shanghai Jiao Tong University,<br>China</span>
+	                	    <br>
+	                	    <span class="uk-text-middle uk-text-light uk-text-small"><a href="https://nls.sjtu.edu.cn/web/base/personal-info/5e50b16a6b5cc99eeca74884?index=2&child=1" target="_blank">Website</a></span>
+	                	</td>
+	            	</tr>
+
+	            	<tr>
+	                	<td><img class="uk-preserve-width uk-border-rounded" src="https:&#x2F;&#x2F;robotmeetsgnss.com&#x2F;processed_images&#x2F;xingxing.01449a31a9d1a82c.png" width="150" height="100" alt=""></td>
+	                	<td class="uk-text-top uk-table-expand">
+	                	    <span class="uk-text-middle">Prof. Dr. Xingxing Li</span>
+	                	    <br>
+	                	    <span class="uk-text-middle uk-text-light uk-text-small">Wuhan University,<br>China</span>
+	                	    <br>
+	                	    <span class="uk-text-middle uk-text-light uk-text-small"><a href="https://jszy.whu.edu.cn/lixingxing/en/index/461290/list/index.htm" target="_blank">Website</a></span>
+	                	</td>
+	            	</tr>
+
+	            	<tr>
+	                	<td>
+	                		<img class="uk-preserve-width uk-border-rounded" src="https:&#x2F;&#x2F;robotmeetsgnss.com&#x2F;processed_images&#x2F;weisong.67bc5f792bdb7ed6.png" width="150" height="100" alt="">
+	                	</td>
+	                	<td class="uk-text-top uk-table-expand">
+	                	    <span class="uk-text-middle">Prof. Dr. Weisong Wen</span>
+	                	    <br>
+	                	    <span class="uk-text-middle uk-text-light uk-text-small">TAS Lab,<br>Hong Kong Polytechnic University,<br>Hong Kong</span>
+	                	    <br>
+	                	    <span class="uk-text-middle uk-text-light uk-text-small"><a href="https://polyu-taslab.github.io/team/" target="_blank">Website</a></span>
+	                	</td>
+
+	            	</tr>
+	        	</tbody>
+    		</table>	
+	    </div>
+
+	    <div class="uk-width-1-3@m">
+			<table class="uk-table uk-table-small uk-table-justify uk-table-striped">
+       	 		<thead>
+	            	<tr>
+	                	<th class="uk-table-shrink"></th>
+	                	<th class="uk-table-shrink"></th>
+	            	</tr>
+	        	</thead>
+	        	<tbody>
+	        		<tr>
+	                	<td><img class="uk-preserve-width uk-border-rounded" src="https:&#x2F;&#x2F;robotmeetsgnss.com&#x2F;processed_images&#x2F;taro.0addd4692ff13031.png" width="150" height="100" alt=""></td>
+	                	<td class="uk-text-top uk-table-expand">
+	                	    <span class="uk-text-middle">Dr. Taro Suzuki</span>
+	                	    <br>
+	                	    <span class="uk-text-middle uk-text-light uk-text-small">Chiba Institute of Technology,<br>Japan</span>
+	                	    <br>
+	                	    <span class="uk-text-middle uk-text-light uk-text-small"><a href="http://www.taroz.net/" target="_blank">Website</a></span>
+	                	</td>
+	            	</tr>
+
+	            	<tr>
+	                	<td><img class="uk-preserve-width uk-border-rounded" src="https:&#x2F;&#x2F;robotmeetsgnss.com&#x2F;processed_images&#x2F;s_prof_feng.cfcb493d57e78279.png" width="150" height="100" alt=""></td>
+	                	<td class="uk-text-top uk-table-expand">
+	                	    <span class="uk-text-middle">Prof. Dr.<br>Shaojun Feng</span>
+	                	    <br>
+	                	    <span class="uk-text-middle uk-text-light uk-text-small">Qianxun Spatial Intelligence Inc., China, <br>Imperiall College London, UK</span>
+	                	    <br>
+	                	    <span class="uk-text-middle uk-text-light uk-text-small"><a href="https://profiles.imperial.ac.uk/s.feng/about " target="_blank">Website</a></span>
+	                	</td>
+	            	</tr>
+
+	            	<tr>
+	                	<td><img class="uk-preserve-width uk-border-rounded" src="https:&#x2F;&#x2F;robotmeetsgnss.com&#x2F;processed_images&#x2F;person-dummy.bc77b292d2d0d631.jpg" width="190" height="100" alt=""></td>
+	                	<td class="uk-text-top">
+	                	    <span class="uk-text-middle">Lorem ipsum.</span>
+	                	</td>
+	            	</tr>          	
+	        	</tbody>
+    		</table>	
+	    </div>
+	</div>
+</div>
+  </div>
+
+
+  <hr class="uk-divider-icon">
+  <!--div class="uk-width-1-1@m">
+      <h2><b>Registration</h2>
+
+
+
+
+
+
+  <button class="uk-button uk-button-primary uk-button-large">
+    Registration will open soon
+  </button>
+
+
+
+<p><strong>Some organizations offer their own registration form</strong>. In this case please
+register with them and then you do not have to register here centrally as well.
+We will then make sure that everybody gets all necessary information.</p>
+
+
+  </div-->
+
+  <div class="uk-grid-divider uk-child-width-expand@s" uk-grid>
+    <div class="uk-width-3-5@m">
+      
+
+<h2><b>Tentative Schedule</b></h2>
+
+<script>
+  dayjs.extend(window.dayjs_plugin_utc)
+</script>
+
+<div class="uk-alert-danger" uk-alert>
+  <a class="uk-alert-close" uk-close></a>
+  <p>
+    All times are displayed in the local timezone of your browser.
+    Detected timezone offset compared to UTC: 
+  <script>
+    var date = '2025-10-19';
+    var time = '16:00';
+    var ts = dayjs(date + 'T' + time + ':00Z').utc();
+    document.write(ts.local().format('Z'));
+  </script>
+
+  </p>
+</div>
+
+<div class="uk-alert-info" uk-alert>
+  <a class="uk-alert-close" uk-close></a>
+  <p>
+    <b>Slides</b> of all keynotes will be made avilable after the workshop.
+  </p>
+</div>
+
+<table class="uk-table uk-table-small uk-table-striped">
+  <tbody>
+    
+    
+      <tr>
+        <td>
+        </td>
+        <td>
+          &nbsp;
+          <br>
+          <b>Morning Session</b>
+        </td>
+      </tr>
+      
+        <tr>
+          <td class="uk-width-1-3">
+            
+  <script>
+    var date = '2025-10-19';
+    var time = '00:45';
+    if (time.length < 5) {
+      time = '0' + time;
+    }
+    var ts = dayjs(date + 'T' + time + ':00Z').utc();
+    document.write(ts.local().format('ddd (MMM D)'));
+  </script>
+,
+            
+  <script>
+    var date = '2025-10-19';
+    var time = '00:45';
+    if (time.length < 5) {
+      time = '0' + time;
+    }
+    var ts = dayjs(date + 'T' + time + ':00Z').utc();
+    document.write(ts.local().format('HH:mm'));
+  </script>
+
+            
+              -
+              
+  <script>
+    var date = '2025-10-19';
+    var time = '01:00';
+    if (time.length < 5) {
+      time = '0' + time;
+    }
+    var ts = dayjs(date + 'T' + time + ':00Z').utc();
+    document.write(ts.local().format('HH:mm'));
+  </script>
+
+            
+          </td>
+          <td class="uk-width-2-3">
+            
+              Welcome and Opening Remarks
+            
+            <br>
+            
+            
+              <div class="uk-text-small">
+                
+                  <a href="https:&#x2F;&#x2F;www.polyu.edu.hk&#x2F;aae&#x2F;ipn-lab&#x2F;us&#x2F;index.html" target="_blank">Prof. Dr. Li-Ta Hsu</a>
+                
+              </div>
+            
+            
+          </td>
+        </tr>
+      
+        <tr>
+          <td class="uk-width-1-3">
+            
+  <script>
+    var date = '2025-10-19';
+    var time = '01:00';
+    if (time.length < 5) {
+      time = '0' + time;
+    }
+    var ts = dayjs(date + 'T' + time + ':00Z').utc();
+    document.write(ts.local().format('ddd (MMM D)'));
+  </script>
+,
+            
+  <script>
+    var date = '2025-10-19';
+    var time = '01:00';
+    if (time.length < 5) {
+      time = '0' + time;
+    }
+    var ts = dayjs(date + 'T' + time + ':00Z').utc();
+    document.write(ts.local().format('HH:mm'));
+  </script>
+
+            
+              -
+              
+  <script>
+    var date = '2025-10-19';
+    var time = '01:30';
+    if (time.length < 5) {
+      time = '0' + time;
+    }
+    var ts = dayjs(date + 'T' + time + ':00Z').utc();
+    document.write(ts.local().format('HH:mm'));
+  </script>
+
+            
+          </td>
+          <td class="uk-width-2-3">
+            
+              BeiDou Alone Is Not Enough: Space, Air and Ground Cooperative PNT Architecture and Key Technologies for Low Altitude Economy
+            
+            <br>
+            
+            
+              <div class="uk-text-small">
+                
+                  <a href="http:&#x2F;&#x2F;web.ee.tsinghua.edu.cn&#x2F;lumingquan&#x2F;en&#x2F;index.htm" target="_blank">Prof. Dr. Mingquan Lu</a>
+                
+              </div>
+            
+            
+              <div class="uk-text-small">
+                Tsinghua University, China
+              </div>
+            
+          </td>
+        </tr>
+      
+        <tr>
+          <td class="uk-width-1-3">
+            
+  <script>
+    var date = '2025-10-19';
+    var time = '01:30';
+    if (time.length < 5) {
+      time = '0' + time;
+    }
+    var ts = dayjs(date + 'T' + time + ':00Z').utc();
+    document.write(ts.local().format('ddd (MMM D)'));
+  </script>
+,
+            
+  <script>
+    var date = '2025-10-19';
+    var time = '01:30';
+    if (time.length < 5) {
+      time = '0' + time;
+    }
+    var ts = dayjs(date + 'T' + time + ':00Z').utc();
+    document.write(ts.local().format('HH:mm'));
+  </script>
+
+            
+              -
+              
+  <script>
+    var date = '2025-10-19';
+    var time = '02:00';
+    if (time.length < 5) {
+      time = '0' + time;
+    }
+    var ts = dayjs(date + 'T' + time + ':00Z').utc();
+    document.write(ts.local().format('HH:mm'));
+  </script>
+
+            
+          </td>
+          <td class="uk-width-2-3">
+            
+              Connecting GNSS and Robotics - Toward Tightly Coupled Sensor Integration
+            
+            <br>
+            
+            
+              <div class="uk-text-small">
+                
+                  <a href="http:&#x2F;&#x2F;www.taroz.net&#x2F;" target="_blank">Dr. Taro Suzuki</a>
+                
+              </div>
+            
+            
+              <div class="uk-text-small">
+                Chiba Institute of Technology, Japan
+              </div>
+            
+          </td>
+        </tr>
+      
+        <tr>
+          <td class="uk-width-1-3">
+            
+  <script>
+    var date = '2025-10-19';
+    var time = '02:00';
+    if (time.length < 5) {
+      time = '0' + time;
+    }
+    var ts = dayjs(date + 'T' + time + ':00Z').utc();
+    document.write(ts.local().format('ddd (MMM D)'));
+  </script>
+,
+            
+  <script>
+    var date = '2025-10-19';
+    var time = '02:00';
+    if (time.length < 5) {
+      time = '0' + time;
+    }
+    var ts = dayjs(date + 'T' + time + ':00Z').utc();
+    document.write(ts.local().format('HH:mm'));
+  </script>
+
+            
+              -
+              
+  <script>
+    var date = '2025-10-19';
+    var time = '02:30';
+    if (time.length < 5) {
+      time = '0' + time;
+    }
+    var ts = dayjs(date + 'T' + time + ':00Z').utc();
+    document.write(ts.local().format('HH:mm'));
+  </script>
+
+            
+          </td>
+          <td class="uk-width-2-3">
+            
+              Robotic research using Advanced GNSS technologies
+            
+            <br>
+            
+            
+              <div class="uk-text-small">
+                
+                  <a href="https:&#x2F;&#x2F;jszy.whu.edu.cn&#x2F;lixingxing&#x2F;en&#x2F;index&#x2F;461290&#x2F;list&#x2F;index.htm" target="_blank">Prof. Dr. Xingxing Li</a>
+                
+              </div>
+            
+            
+              <div class="uk-text-small">
+                Wuhan University, China
+              </div>
+            
+          </td>
+        </tr>
+      
+        <tr>
+          <td class="uk-width-1-3">
+            
+  <script>
+    var date = '2025-10-19';
+    var time = '02:30';
+    if (time.length < 5) {
+      time = '0' + time;
+    }
+    var ts = dayjs(date + 'T' + time + ':00Z').utc();
+    document.write(ts.local().format('ddd (MMM D)'));
+  </script>
+,
+            
+  <script>
+    var date = '2025-10-19';
+    var time = '02:30';
+    if (time.length < 5) {
+      time = '0' + time;
+    }
+    var ts = dayjs(date + 'T' + time + ':00Z').utc();
+    document.write(ts.local().format('HH:mm'));
+  </script>
+
+            
+              -
+              
+  <script>
+    var date = '2025-10-19';
+    var time = '03:00';
+    if (time.length < 5) {
+      time = '0' + time;
+    }
+    var ts = dayjs(date + 'T' + time + ':00Z').utc();
+    document.write(ts.local().format('HH:mm'));
+  </script>
+
+            
+          </td>
+          <td class="uk-width-2-3">
+            
+              Coffee Break and Poster Session
+            
+            <br>
+            
+            
+            
+          </td>
+        </tr>
+      
+        <tr>
+          <td class="uk-width-1-3">
+            
+  <script>
+    var date = '2025-10-19';
+    var time = '03:00';
+    if (time.length < 5) {
+      time = '0' + time;
+    }
+    var ts = dayjs(date + 'T' + time + ':00Z').utc();
+    document.write(ts.local().format('ddd (MMM D)'));
+  </script>
+,
+            
+  <script>
+    var date = '2025-10-19';
+    var time = '03:00';
+    if (time.length < 5) {
+      time = '0' + time;
+    }
+    var ts = dayjs(date + 'T' + time + ':00Z').utc();
+    document.write(ts.local().format('HH:mm'));
+  </script>
+
+            
+              -
+              
+  <script>
+    var date = '2025-10-19';
+    var time = '03:30';
+    if (time.length < 5) {
+      time = '0' + time;
+    }
+    var ts = dayjs(date + 'T' + time + ':00Z').utc();
+    document.write(ts.local().format('HH:mm'));
+  </script>
+
+            
+          </td>
+          <td class="uk-width-2-3">
+            
+              Toward Robust, Real-time, Radiance Map Reconstruction with Multi-sensor Fusion in GNSS-denied Scenarios
+            
+            <br>
+            
+            
+              <div class="uk-text-small">
+                
+                  <a href="https:&#x2F;&#x2F;jiaronglin.com&#x2F;" target="_blank">Dr. Jiarong Lin (Prof. Dr. Fu Zhang)</a>
+                
+              </div>
+            
+            
+              <div class="uk-text-small">
+                Mechatronics and Robotic Systems Laboratory<br>University of Hong Kong, Hong Kong
+              </div>
+            
+          </td>
+        </tr>
+      
+        <tr>
+          <td class="uk-width-1-3">
+            
+  <script>
+    var date = '2025-10-19';
+    var time = '03:30';
+    if (time.length < 5) {
+      time = '0' + time;
+    }
+    var ts = dayjs(date + 'T' + time + ':00Z').utc();
+    document.write(ts.local().format('ddd (MMM D)'));
+  </script>
+,
+            
+  <script>
+    var date = '2025-10-19';
+    var time = '03:30';
+    if (time.length < 5) {
+      time = '0' + time;
+    }
+    var ts = dayjs(date + 'T' + time + ':00Z').utc();
+    document.write(ts.local().format('HH:mm'));
+  </script>
+
+            
+              -
+              
+  <script>
+    var date = '2025-10-19';
+    var time = '04:00';
+    if (time.length < 5) {
+      time = '0' + time;
+    }
+    var ts = dayjs(date + 'T' + time + ':00Z').utc();
+    document.write(ts.local().format('HH:mm'));
+  </script>
+
+            
+          </td>
+          <td class="uk-width-2-3">
+            
+              Empower robotic research using GNSS services
+            
+            <br>
+            
+            
+              <div class="uk-text-small">
+                
+                  <a href="https:&#x2F;&#x2F;profiles.imperial.ac.uk&#x2F;s.feng&#x2F;about" target="_blank">Prof. Dr. Shaojun Feng</a>
+                
+              </div>
+            
+            
+              <div class="uk-text-small">
+                Qianxun Spatial Inteligence Inc. China, <br>Imperiall College London, UK
+              </div>
+            
+          </td>
+        </tr>
+      
+        <tr>
+          <td class="uk-width-1-3">
+            
+  <script>
+    var date = '2025-10-19';
+    var time = '04:00';
+    if (time.length < 5) {
+      time = '0' + time;
+    }
+    var ts = dayjs(date + 'T' + time + ':00Z').utc();
+    document.write(ts.local().format('ddd (MMM D)'));
+  </script>
+,
+            
+  <script>
+    var date = '2025-10-19';
+    var time = '04:00';
+    if (time.length < 5) {
+      time = '0' + time;
+    }
+    var ts = dayjs(date + 'T' + time + ':00Z').utc();
+    document.write(ts.local().format('HH:mm'));
+  </script>
+
+            
+              -
+              
+  <script>
+    var date = '2025-10-19';
+    var time = '04:30';
+    if (time.length < 5) {
+      time = '0' + time;
+    }
+    var ts = dayjs(date + 'T' + time + ':00Z').utc();
+    document.write(ts.local().format('HH:mm'));
+  </script>
+
+            
+          </td>
+          <td class="uk-width-2-3">
+            
+              Brain-inspired navigation
+            
+            <br>
+            
+            
+              <div class="uk-text-small">
+                
+                  <a href="https:&#x2F;&#x2F;nls.sjtu.edu.cn&#x2F;web&#x2F;base&#x2F;personal-info&#x2F;5e50b16a6b5cc99eeca74884?index=2&amp;child=1" target="_blank">Prof. Dr. Ling Pei</a>
+                
+              </div>
+            
+            
+              <div class="uk-text-small">
+                Shanghai Jiao Tong University
+              </div>
+            
+          </td>
+        </tr>
+      
+    
+      <tr>
+        <td>
+        </td>
+        <td>
+          &nbsp;
+          <br>
+          <b></b>
+        </td>
+      </tr>
+      
+        <tr>
+          <td class="uk-width-1-3">
+            
+  <script>
+    var date = '2025-10-19';
+    var time = '04:30';
+    if (time.length < 5) {
+      time = '0' + time;
+    }
+    var ts = dayjs(date + 'T' + time + ':00Z').utc();
+    document.write(ts.local().format('ddd (MMM D)'));
+  </script>
+,
+            
+  <script>
+    var date = '2025-10-19';
+    var time = '04:30';
+    if (time.length < 5) {
+      time = '0' + time;
+    }
+    var ts = dayjs(date + 'T' + time + ':00Z').utc();
+    document.write(ts.local().format('HH:mm'));
+  </script>
+
+            
+              -
+              
+  <script>
+    var date = '2025-10-19';
+    var time = '05:30';
+    if (time.length < 5) {
+      time = '0' + time;
+    }
+    var ts = dayjs(date + 'T' + time + ':00Z').utc();
+    document.write(ts.local().format('HH:mm'));
+  </script>
+
+            
+          </td>
+          <td class="uk-width-2-3">
+            
+              Lunch
+            
+            <br>
+            
+            
+            
+          </td>
+        </tr>
+      
+    
+      <tr>
+        <td>
+        </td>
+        <td>
+          &nbsp;
+          <br>
+          <b>Afternoon Session</b>
+        </td>
+      </tr>
+      
+        <tr>
+          <td class="uk-width-1-3">
+            
+  <script>
+    var date = '2025-10-19';
+    var time = '05:30';
+    if (time.length < 5) {
+      time = '0' + time;
+    }
+    var ts = dayjs(date + 'T' + time + ':00Z').utc();
+    document.write(ts.local().format('ddd (MMM D)'));
+  </script>
+,
+            
+  <script>
+    var date = '2025-10-19';
+    var time = '05:30';
+    if (time.length < 5) {
+      time = '0' + time;
+    }
+    var ts = dayjs(date + 'T' + time + ':00Z').utc();
+    document.write(ts.local().format('HH:mm'));
+  </script>
+
+            
+              -
+              
+  <script>
+    var date = '2025-10-19';
+    var time = '06:00';
+    if (time.length < 5) {
+      time = '0' + time;
+    }
+    var ts = dayjs(date + 'T' + time + ':00Z').utc();
+    document.write(ts.local().format('HH:mm'));
+  </script>
+
+            
+          </td>
+          <td class="uk-width-2-3">
+            
+              Safety-quantifiable Joint Positioning and Control for Factor Graph
+            
+            <br>
+            
+            
+              <div class="uk-text-small">
+                
+                  <a href="https:&#x2F;&#x2F;polyu-taslab.github.io&#x2F;" target="_blank">Prof. Dr. Weisong Wen</a>
+                
+              </div>
+            
+            
+              <div class="uk-text-small">
+                Trustworthy AI and Autonomous Systems Laboratory<br>The Hong Kong Polytechnic University, Hong Kong
+              </div>
+            
+          </td>
+        </tr>
+      
+        <tr>
+          <td class="uk-width-1-3">
+            
+  <script>
+    var date = '2025-10-19';
+    var time = '06:00';
+    if (time.length < 5) {
+      time = '0' + time;
+    }
+    var ts = dayjs(date + 'T' + time + ':00Z').utc();
+    document.write(ts.local().format('ddd (MMM D)'));
+  </script>
+,
+            
+  <script>
+    var date = '2025-10-19';
+    var time = '06:00';
+    if (time.length < 5) {
+      time = '0' + time;
+    }
+    var ts = dayjs(date + 'T' + time + ':00Z').utc();
+    document.write(ts.local().format('HH:mm'));
+  </script>
+
+            
+              -
+              
+  <script>
+    var date = '2025-10-19';
+    var time = '06:30';
+    if (time.length < 5) {
+      time = '0' + time;
+    }
+    var ts = dayjs(date + 'T' + time + ':00Z').utc();
+    document.write(ts.local().format('HH:mm'));
+  </script>
+
+            
+          </td>
+          <td class="uk-width-2-3">
+            
+              Multisensor Integrity
+            
+            <br>
+            
+            
+              <div class="uk-text-small">
+                
+                  <div class="uk-text-small">
+                    tbd.
+                  </div>
+                
+              </div>
+            
+            
+          </td>
+        </tr>
+      
+        <tr>
+          <td class="uk-width-1-3">
+            
+  <script>
+    var date = '2025-10-19';
+    var time = '06:30';
+    if (time.length < 5) {
+      time = '0' + time;
+    }
+    var ts = dayjs(date + 'T' + time + ':00Z').utc();
+    document.write(ts.local().format('ddd (MMM D)'));
+  </script>
+,
+            
+  <script>
+    var date = '2025-10-19';
+    var time = '06:30';
+    if (time.length < 5) {
+      time = '0' + time;
+    }
+    var ts = dayjs(date + 'T' + time + ':00Z').utc();
+    document.write(ts.local().format('HH:mm'));
+  </script>
+
+            
+              -
+              
+  <script>
+    var date = '2025-10-19';
+    var time = '07:00';
+    if (time.length < 5) {
+      time = '0' + time;
+    }
+    var ts = dayjs(date + 'T' + time + ':00Z').utc();
+    document.write(ts.local().format('HH:mm'));
+  </script>
+
+            
+          </td>
+          <td class="uk-width-2-3">
+            
+              Non-Gaussian State Estimation for GNSS, Ranging, and Beyond
+            
+            <br>
+            
+            
+              <div class="uk-text-small">
+                
+                  <a href="https:&#x2F;&#x2F;tipf.github.io&#x2F;" target="_blank">Dr. Tim Pfeifer</a>
+                
+              </div>
+            
+            
+              <div class="uk-text-small">
+                Siemens AG, Germany
+              </div>
+            
+          </td>
+        </tr>
+      
+        <tr>
+          <td class="uk-width-1-3">
+            
+  <script>
+    var date = '2025-10-19';
+    var time = '07:00';
+    if (time.length < 5) {
+      time = '0' + time;
+    }
+    var ts = dayjs(date + 'T' + time + ':00Z').utc();
+    document.write(ts.local().format('ddd (MMM D)'));
+  </script>
+,
+            
+  <script>
+    var date = '2025-10-19';
+    var time = '07:00';
+    if (time.length < 5) {
+      time = '0' + time;
+    }
+    var ts = dayjs(date + 'T' + time + ':00Z').utc();
+    document.write(ts.local().format('HH:mm'));
+  </script>
+
+            
+              -
+              
+  <script>
+    var date = '2025-10-19';
+    var time = '07:30';
+    if (time.length < 5) {
+      time = '0' + time;
+    }
+    var ts = dayjs(date + 'T' + time + ':00Z').utc();
+    document.write(ts.local().format('HH:mm'));
+  </script>
+
+            
+          </td>
+          <td class="uk-width-2-3">
+            
+              Coffee Break and Poster Session
+            
+            <br>
+            
+            
+            
+          </td>
+        </tr>
+      
+        <tr>
+          <td class="uk-width-1-3">
+            
+  <script>
+    var date = '2025-10-19';
+    var time = '07:30';
+    if (time.length < 5) {
+      time = '0' + time;
+    }
+    var ts = dayjs(date + 'T' + time + ':00Z').utc();
+    document.write(ts.local().format('ddd (MMM D)'));
+  </script>
+,
+            
+  <script>
+    var date = '2025-10-19';
+    var time = '07:30';
+    if (time.length < 5) {
+      time = '0' + time;
+    }
+    var ts = dayjs(date + 'T' + time + ':00Z').utc();
+    document.write(ts.local().format('HH:mm'));
+  </script>
+
+            
+              -
+              
+  <script>
+    var date = '2025-10-19';
+    var time = '08:00';
+    if (time.length < 5) {
+      time = '0' + time;
+    }
+    var ts = dayjs(date + 'T' + time + ':00Z').utc();
+    document.write(ts.local().format('HH:mm'));
+  </script>
+
+            
+          </td>
+          <td class="uk-width-2-3">
+            
+              Highlight talks of accepted abstracts
+            
+            <br>
+            
+            
+            
+          </td>
+        </tr>
+      
+        <tr>
+          <td class="uk-width-1-3">
+            
+  <script>
+    var date = '2025-10-19';
+    var time = '08:00';
+    if (time.length < 5) {
+      time = '0' + time;
+    }
+    var ts = dayjs(date + 'T' + time + ':00Z').utc();
+    document.write(ts.local().format('ddd (MMM D)'));
+  </script>
+,
+            
+  <script>
+    var date = '2025-10-19';
+    var time = '08:00';
+    if (time.length < 5) {
+      time = '0' + time;
+    }
+    var ts = dayjs(date + 'T' + time + ':00Z').utc();
+    document.write(ts.local().format('HH:mm'));
+  </script>
+
+            
+              -
+              
+  <script>
+    var date = '2025-10-19';
+    var time = '08:50';
+    if (time.length < 5) {
+      time = '0' + time;
+    }
+    var ts = dayjs(date + 'T' + time + ':00Z').utc();
+    document.write(ts.local().format('HH:mm'));
+  </script>
+
+            
+          </td>
+          <td class="uk-width-2-3">
+            
+              Panel Discussion:
+            
+            <br>
+            
+              Diffraction of Common GNSS-Inspired Problems in Robotics: system, integrity, and transferability to other ranging sources
+            
+            
+            
+          </td>
+        </tr>
+      
+        <tr>
+          <td class="uk-width-1-3">
+            
+  <script>
+    var date = '2025-10-19';
+    var time = '08:50';
+    if (time.length < 5) {
+      time = '0' + time;
+    }
+    var ts = dayjs(date + 'T' + time + ':00Z').utc();
+    document.write(ts.local().format('ddd (MMM D)'));
+  </script>
+,
+            
+  <script>
+    var date = '2025-10-19';
+    var time = '08:50';
+    if (time.length < 5) {
+      time = '0' + time;
+    }
+    var ts = dayjs(date + 'T' + time + ':00Z').utc();
+    document.write(ts.local().format('HH:mm'));
+  </script>
+
+            
+              -
+              
+  <script>
+    var date = '2025-10-19';
+    var time = '09:00';
+    if (time.length < 5) {
+      time = '0' + time;
+    }
+    var ts = dayjs(date + 'T' + time + ':00Z').utc();
+    document.write(ts.local().format('HH:mm'));
+  </script>
+
+            
+          </td>
+          <td class="uk-width-2-3">
+            
+              Closing Remark
+            
+            <br>
+            
+            
+              <div class="uk-text-small">
+                
+                  <a href="https:&#x2F;&#x2F;www.polyu.edu.hk&#x2F;aae&#x2F;ipn-lab&#x2F;us&#x2F;index.html" target="_blank">Prof. Dr. Li-Ta Hsu</a>
+                
+              </div>
+            
+            
+          </td>
+        </tr>
+      
+    
+      <tr>
+        <td>
+        </td>
+        <td>
+          &nbsp;
+          <br>
+          <b></b>
+        </td>
+      </tr>
+      
+        <tr>
+          <td class="uk-width-1-3">
+            
+  <script>
+    var date = '2025-10-19';
+    var time = '09:00';
+    if (time.length < 5) {
+      time = '0' + time;
+    }
+    var ts = dayjs(date + 'T' + time + ':00Z').utc();
+    document.write(ts.local().format('ddd (MMM D)'));
+  </script>
+,
+            
+  <script>
+    var date = '2025-10-19';
+    var time = '09:00';
+    if (time.length < 5) {
+      time = '0' + time;
+    }
+    var ts = dayjs(date + 'T' + time + ':00Z').utc();
+    document.write(ts.local().format('HH:mm'));
+  </script>
+
+            
+          </td>
+          <td class="uk-width-2-3">
+            
+              Dinner
+            
+            <br>
+            
+            
+            
+          </td>
+        </tr>
+      
+    
+  </tbody>
+</table>
+
+<br>
+    </div>
+    <div class="uk-width-2-5@m">
+      <h2><b>Organization</h2>
+
+
+<h3 id="workshop-format">Workshop Format</h3>
+<ul>
+<li>Full-day workshop</li>
+<li>Hybrid event</li>
+</ul>
+<h3 id="call-for-abstracts-and-posters">Call for Abstracts and Posters</h3>
+<p>To be announced.</p>
+<h3 id="online-q-a-and-polling">Online Q&amp;A and Polling</h3>
+<p>We encourage all participants to engage with our speakers and fellow colleagues throughout the workshop via
+<a rel="noopener" target="_blank" href="https://app.sli.do/event/sTVeNYpp7CqickgaXXMGp6">our <b>Slido</b> workspace</a>.</p>
+<h3 id="online-attendance">Online Attendance</h3>
+<p>For researchers unable to attend the workshop in person, remote participation is available via zoom (to be announced).</p>
+
+
+
+    </div>
+  </div>
+
+  <hr class="uk-divider-icon">
+
+  <div class="uk-width-1-1@m">
+      <h2><b>Organizers</h2>
+
+
+
+
+
+
+
+
+
+
+
+<div class="uk-overflow-auto">
+	<div class="uk-grid uk-child-width-expand@s" uk-grid>
+	    <div class="uk-width-1-3@m">
+			<table class="uk-table uk-table-small uk-table-justify uk-table-striped">
+       	 		<thead>
+	            	<tr>
+	                	<th class="uk-table-shrink"></th>
+	                	<th class="uk-table-shrink"></th>
+	            	</tr>
+	        	</thead>
+	        	<tbody>
+	        		<tr>
+	                	<td>
+				    		<img class="uk-preserve-width uk-border-rounded" src="https:&#x2F;&#x2F;robotmeetsgnss.com&#x2F;processed_images&#x2F;o_haoming.ac717d9c23d03122.png" width="100" height="100" alt="">
+				    	</td>
+				    	<td class="uk-text-top uk-table-expand">
+			        	    <span class="uk-text-middle"><a href="https://hz658832.github.io/" target="_blank">Haoming Zhang</a></span>
+			        	    <br>
+			        	    <span class="uk-text-middle uk-text-light uk-text-small">RWTH Aachen University,<br>Germany</span>
+			        	</td>
+	            	</tr>
+
+	            	<tr>
+	                	<td><img class="uk-preserve-width uk-border-rounded" src="https:&#x2F;&#x2F;robotmeetsgnss.com&#x2F;processed_images&#x2F;o_yibin.f763b1a05a2deb5f.png" width="100" height="100" alt=""></td>
+				    	<td class="uk-text-top uk-table-expand">
+			        	    <span class="uk-text-middle"><a href="https://yibinwu.github.io/" target="_blank">Yibin Wu</a></span>
+			        	    <br>
+			        	    <span class="uk-text-middle uk-text-light uk-text-small">Institute of Geodesy and Geoinformation,<br>University of Bonn,<br> Germany</span>
+			        	</td>
+	            	</tr>
+
+	            	<tr>
+	                	<td><img class="uk-preserve-width uk-border-rounded" src="https:&#x2F;&#x2F;robotmeetsgnss.com&#x2F;processed_images&#x2F;weisong.67bc5f792bdb7ed6.png" width="100" height="100" alt=""></td>
+				    	<td class="uk-text-top uk-table-expand">
+			        	    <span class="uk-text-middle"><a href="https://polyu-taslab.github.io/team/" target="_blank">Prof. Dr. Weisong Wen</a></span>
+			        	    <br>
+			        	    <span class="uk-text-middle uk-text-light uk-text-small">TAS Lab,<br>The Hong Kong Polytechnic University,<br>Hong Kong</span>
+			        	</td>
+	            	</tr>
+	         
+	        	</tbody>
+    		</table>	
+	    </div>
+
+	    <div class="uk-width-1-3@m">
+			<table class="uk-table uk-table-small uk-table-justify uk-table-striped">
+       	 		<thead>
+	            	<tr>
+	                	<th class="uk-table-shrink"></th>
+	                	<th class="uk-table-shrink"></th>
+	            	</tr>
+	        	</thead>
+	        	<tbody>
+	        		<tr>
+	                	<td><img class="uk-preserve-width uk-border-rounded" src="https:&#x2F;&#x2F;robotmeetsgnss.com&#x2F;processed_images&#x2F;o_darren.e235f7f81a82469b.png" width="100" height="100" alt=""></td>
+				    	<td class="uk-text-top uk-table-expand">
+			        	    <span class="uk-text-middle"><a href="https://darrenwong.github.io/" target="_blank">Feng (Darren) Huang</a></span>
+			        	    <br>
+			        	    <span class="uk-text-middle uk-text-light uk-text-small">The Hong Kong Polytechnic University,<br>Hong Kong</span>
+			        	</td>
+	            	</tr>
+
+	            	<tr>
+	                	<td><img class="uk-preserve-width uk-border-rounded" src="https:&#x2F;&#x2F;robotmeetsgnss.com&#x2F;processed_images&#x2F;taro.0addd4692ff13031.png" width="100" height="100" alt=""></td>
+				    	<td class="uk-text-top uk-table-expand">
+				    	    <span class="uk-text-middle"><a href="http://www.taroz.net/" target="_blank">Dr. Taro Suzuki</a></span>
+				    	    <br>
+				    	    <span class="uk-text-middle uk-text-light uk-text-small">Chiba Institute of Technology,<br>Japan</span>
+				    	</td>
+	            	</tr>
+
+	            	<tr>
+	                	<td>
+				    		<img class="uk-preserve-width uk-border-rounded" src="https:&#x2F;&#x2F;robotmeetsgnss.com&#x2F;processed_images&#x2F;o_prof_wang.fea2e42ae29217a3.png" width="100" height="100" alt="">
+				    	</td>
+				    	<td class="uk-text-top uk-table-expand">
+				    	    <span class="uk-text-middle"><a href="https://www.unsw.edu.au/staff/jinling-wang" target="_blank">Prof. Dr. Jinling Wang</a></span>
+				    	    <br>
+				    	    <span class="uk-text-middle uk-text-light uk-text-small">University of New South Wales Sydney,<br>Australia</span>
+				    	</td>
+	            	</tr>
+	        	</tbody>
+    		</table>	
+	    </div>
+
+	    <div class="uk-width-1-3@m">
+			<table class="uk-table uk-table-small uk-table-justify uk-table-striped">
+       	 		<thead>
+	            	<tr>
+	                	<th class="uk-table-shrink"></th>
+	                	<th class="uk-table-shrink"></th>
+	            	</tr>
+	        	</thead>
+	        	<tbody>
+	        		<tr>
+	                	<td>
+				    		<img class="uk-preserve-width uk-border-rounded" src="https:&#x2F;&#x2F;robotmeetsgnss.com&#x2F;processed_images&#x2F;o_xikun.a2c0969b6b644cec.png" width="100" height="100" alt="">
+				    	</td>
+						<td class="uk-text-top uk-table-expand">
+			        	    <span class="uk-text-middle"><a href="https://xikunliu-huskit.github.io/" target="_blank">Xikun Liu</a></span>
+			        	    <br>
+			        	    <span class="uk-text-middle uk-text-light uk-text-small">TAS Lab,<br>The Hong Kong Polytechnic University,<br>Hong Kong</span>
+			        	</td>
+	            	</tr>
+
+	            	<tr>
+	                	<td><img class="uk-preserve-width uk-border-rounded" src="https:&#x2F;&#x2F;robotmeetsgnss.com&#x2F;processed_images&#x2F;o_daniel.044bcffb6eb3eabf.png" width="100" height="100" alt=""></td>
+	                	<td class="uk-text-top uk-table-expand">
+	                	    <span class="uk-text-middle"><a href="https://www.dlr.de/en/kn" target="_blank">Dr. Daniel Medina</a></span>
+	                	    <br>
+	                	    <span class="uk-text-middle uk-text-light uk-text-small">Institute of Communications and Navigation,<br>German Aerospace Center (DLR),<br>Germany</span>
+	                	</td>
+	            	</tr>
+
+	            	<tr>
+	                	<td><img class="uk-preserve-width uk-border-rounded" src="https:&#x2F;&#x2F;robotmeetsgnss.com&#x2F;processed_images&#x2F;o_lita.fee768b7c6b00906.png" width="100" height="100" alt=""></td>
+	                	<td class="uk-text-top">
+	                		<span class="uk-text-middle"><a href="https://www.polyu.edu.hk/aae/ipn-lab/us/index.html" target="_blank">Prof. Dr. Li-Ta Hsu</a></span>
+	                	    <br>
+	                	    <span class="uk-text-middle uk-text-light uk-text-small">IPN Lab,<br>The Hong Kong Polytechnic University,<br>Hong Kong</span>
+	                	</td>
+	            	</tr>          	
+	        	</tbody>
+    		</table>	
+	    </div>
+	</div>
+</div>
+
+  </div>
+
+
+      </div>
+
+      <div class="uk-margin-large-top">
+        <hr>
+        <div class="uk-child-width-expand@s" uk-grid>
+
+  <div>
+    <h4>Source</h4>
+    <ul class="uk-iconnav">
+      <li>
+        <a href="https://github.com/hz658832/RobotMeetGNSS" target="_blank" uk-icon="icon: github">GitHub</a>
+      </li>
+      <!--li>
+        <a rel="me" href="https://fosstodon.org/@coderefinery" target="_blank" uk-icon="icon: social">Mastodon</a>
+      </li-->
+      <!--li>
+        <a href="https://www.linkedin.com/company/coderefinery-research-software-development/?viewAsMember=true" target="_blank" uk-icon="icon: linkedin">LinkedIn</a>
+      </li-->
+    </ul>
+  </div>
+
+  <div>
+    <h4>Contact</h4>
+    <p>
+      <a href="mailto:haoming.zhang@rwth-aachen.de">Haoming Zhang</a><br>
+      <a href="mailto:darren-f.huang@connect.polyu.hk">Darren Wong</a><br>
+      <a href="mailto:lt.hsu@polyu.edu.hk">Li-Ta Hsu</a>
+    </p>
+  </div>
+
+  <div>
+    <h4>Acknowledgement</h4>
+    <p>
+      Website designed by <a href="mailto:haoming.zhang@rwth-aachen.de">Haoming Zhang</a><br>
+    </p>
+    <p>
+      Website template from <a href="https://coderefinery.org/">CODE REFINERY</a>
+    </p>
+  </div>
+
+</div>
+
+      </div>
+
+    </div>
+  </body>
+
+  <script src="https://cdn.jsdelivr.net/npm/anchor-js/anchor.min.js"></script>
+  <script>
+    anchors.add();
+  </script>
+</html>
